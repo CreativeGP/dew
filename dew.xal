@@ -1,0 +1,18 @@
+<../xaller/dev/test/web.xal>
+
+(data)string
+data = 'This is the file. The file is multi line.'
+
+(idx)int
+loop {
+    +(a)Letter
+    a.text = (substr data idx 1)
+    a.id = (concat 'input' (idx)string)
+
+    idx = (+ idx 1)
+    (eq idx (strlen data)) ? {
+        escape
+    }
+}
+
+end
